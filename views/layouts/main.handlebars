@@ -422,12 +422,12 @@
       
                 <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   {{#if logged_in}}
-                  <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Log out</a>
+                  <a class="text-sm font-medium text-white hover:text-gray-100">Log out</a>
                   <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
                   {{else}}
-                  <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
+                  <a href="../signup.handlebars" class="text-sm font-medium text-white hover:text-gray-100">Create an account</a>
                   <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
-                  <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Log in</a>
+                  <a href="../login.handlebars" class="text-sm font-medium text-white hover:text-gray-100">Log in</a>
                   {{/if}}
                   {{!-- <span class="h-6 w-px bg-gray-600" aria-hidden="true"></span>
                   <a href="#" class="text-sm font-medium text-white hover:text-gray-100">Log out</a> --}}
@@ -494,7 +494,7 @@
 
                         {{#if logged_in}}
                           <div class="flex">
-                            <a href="#" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
+                            <a href="../dashboard.handlebars" class="-m-2 p-2 text-gray-400 hover:text-gray-500">
                               <span class="sr-only">Account</span>
                               <!-- Heroicon name: outline/user -->
                               <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
