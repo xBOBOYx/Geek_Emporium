@@ -525,6 +525,23 @@
             </div>
           </nav>
         </header>
+
+
+        <main>
+            {{{ body }}}
+        </main>
+
+
+        <footer>
+
+        </footer>
+
+
         </div>
+
+<!-- Render script for logged in users only -->
+{{#if logged_in}}
+<script src="/public/logout.js"></script>
+{{/if}}
 </body>
 </html>
