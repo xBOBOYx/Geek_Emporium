@@ -1,0 +1,17 @@
+[
+    {
+      "name": "First Edition Charizard",
+      "description": "Mint condition first edition Charizard.",
+      "item_price": 5000
+    },
+    {
+      "name": "Signed Batmobile",
+      "description": "Signed Batmobile from Batman Begins",
+      "item_price": 10000
+    },
+    {
+      "name": "Original Millenium Falcon Toy",
+      "description": "New in box Millenium Falcon",
+      "item_price": 800
+    }
+  ]
