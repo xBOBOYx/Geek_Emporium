@@ -1,4 +1,29 @@
-<section>
+<!-- Your Dashboard banner -->
+<div class="md:flex md:items-center md:justify-between bg-gray-800">
+  <div class="flex-1 min-w-0">
+    <!-- Text size doesn't change?? -->
+    <h1 class="text-2xl font-bold leading-7 text-white sm:text-3xl sm:truncate m-3">
+      Your Dashboard
+    </h1>
+  </div>
+</div>
+
+<!-- Create post button -->
+<div class="mt-4 mx-4 flex justify-center">
+  <button type="button"
+    class="inline-flex items-center pl-3 pr-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    <!-- Heroicon document-add solid -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd"
+        d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V8z"
+        clip-rule="evenodd" />
+    </svg>
+    Create New Post
+  </button>
+</div>
+
+{{!-- Anthony's create post --}}
+{{!-- <section>
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
@@ -12,9 +37,54 @@
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>
+</section> --}}
 
-{{#if posts.length}}
+<!-- Create post form -->
+<form class="space-y-2 mt-4 new-post-form">
+  <div class="mx-4">
+    <h3 class="p-2 text-lg leading-6 font-medium bg-gray-800 text-white rounded-md">
+      Create New Post
+    </h3>
+  </div>
+
+  <div class="sm:col-span-6 mx-4">
+    <label for="post-title" class="block text-sm font-medium text-gray-700">
+      Post Title
+    </label>
+    <div class="mt-1">
+      <input type="text" name="post-title" id="post-title" autocomplete="post-title"
+        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
+    </div>
+  </div>
+
+  <div class="mx-4">
+    <div>
+      <div class="mt-2 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+        <div class="sm:col-span-6">
+          <label for="post-content" class="block text-sm font-medium text-gray-700">
+            Post Content
+          </label>
+          <div class="mt-1">
+            <textarea id="post-content" name="post-content" rows="3"
+              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="flex justify-end mr-10">
+      <button type="submit"
+        class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Create
+      </button>
+    </div>
+  </div>
+</form>
+
+{{!-- Anthony's users posts --}}
+{{!-- {{#if posts.length}}
 <section>
   <h2>Your Posts</h2>
   <ol>
@@ -26,6 +96,42 @@
     {{/each}}
   </ol>
 </section>
+{{/if}} --}}
+
+<!-- User's posts -->
+{{#if posts.length}}
+  <div class="mx-4">
+    <h3 class="p-2 text-lg leading-6 font-medium bg-gray-800 text-white rounded-md">
+      Your Posts
+    </h3>
+  </div>
+
+  {{#each posts as |post| }}
+    <div class="mt-4 mx-4">
+        <ul role="list" class="space-y-4">
+            <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
+                <article aria-labelledby="question-title-81614">
+                    <div>
+                        <h2 id="question-title-81614" class="text-base font-medium text-gray-900">
+                            {{post.title}}
+                        </h2>
+                        <div class="flex justify-between">
+                            <div class="ml-4 text-sm font-medium text-gray-900">
+                                - {{post.user.username}}
+                            </div>
+                            <div class="text-sm text-gray-500">
+                                <div>{{format_date created_at}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 text-sm text-gray-700 space-y-4">
+                        <p>{{post.post_content}}</p>
+                    </div>
+                </article>
+            </li>
+        </ul>
+    </div>
+  {{/each}}
 {{/if}}
 
 <script src="/js/add-post.js"></script>

@@ -20,6 +20,61 @@
   </form>
 </article>
 
+<!-- Edit post (from Xander's). Currently edit post is not functional. -->
+{{!-- <article>
+  <a href="/dashboard"> &larr; Back to Dashboard</a>
+  <form class="space-y-2 mt-4 edit-post-form">
+    <div class="mx-4">
+      <h3 class="p-2 text-lg leading-6 font-medium bg-gray-800 text-white rounded-md">
+        Edit Your Post
+      </h3>
+    </div>
+
+    <div class="sm:col-span-6 mx-4">
+      <label for="post-title" class="block text-sm font-medium text-gray-700">
+        Post Title
+      </label>
+      <div class="mt-1">
+        <input type="text" name="post-title" id="post-title" autocomplete="post-title" value="{{post.title}}"
+          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">
+      </div>
+    </div>
+
+    <div class="mx-4">
+      <div>
+        <div class="mt-2 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+          <div class="sm:col-span-6">
+            <label for="post-content" class="block text-sm font-medium text-gray-700">
+              Edit Content
+            </label>
+            <div class="mt-1">
+              <textarea id="post-content" name="post-content" rows="3"
+                class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md">{{post.post_content}}</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+
+    <div>
+      <div class="flex justify-end mr-10">
+        <button type="button"
+          class="bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Delete Post
+        </button>
+        <button type="submit"
+          class="ml-3 inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          Save Updated Post
+        </button>
+      </div>
+    </div>
+  </form>
+</article> --}}
+
 {{> comments post.comments}}
 
 {{#if loggedIn}}
