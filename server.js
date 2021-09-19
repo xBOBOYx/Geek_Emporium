@@ -3,6 +3,10 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
+const http = require('http');
+const util = require('util');
+const Formidable = require('formidable');
+const cloudinary = require("./config/cloudinary");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
