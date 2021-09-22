@@ -23,6 +23,9 @@ Post.init(
         len: [1]
       }
     },
+    img_src: {
+      type: DataTypes.STRING,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
