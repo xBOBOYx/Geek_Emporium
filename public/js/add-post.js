@@ -3,18 +3,22 @@ async function newFormHandler(event) {
 
   const title = document.querySelector('input[name="post-title"]').value;
   const post_content = document.querySelector('textarea[name="post-content"]').value;
+  const price = document.querySelector('input[name="post-price"]').value;
 
-  const response = await fetch(`/api/posts`, {
+ 
+
+  const response = await fetch(`/api/posts`,{
     method: 'POST',
     body: JSON.stringify({
       title,
-      post_content
+      price,
+      post_content,
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   });
-
+  console.log(response);
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {

@@ -30,11 +30,10 @@ Post.init(
         key: 'id'
       }
     },
-    price: {
+    post_price: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        max: 4,
         isNumeric: true
       }
     }

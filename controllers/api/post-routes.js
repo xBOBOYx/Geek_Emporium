@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { parse } = require('dotenv');
 const sequelize = require('../../config/connection');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -10,11 +11,12 @@ router.get('/', (req, res) => {
       'post_content',
       'title',
       'created_at',
+      'post_price',
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at', 'post_price'],
         include: {
           model: User,
           attributes: ['username']
@@ -43,11 +45,12 @@ router.get('/:id', (req, res) => {
       'post_content',
       'title',
       'created_at',
+      'post_price',
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at','post_price'],
         include: {
           model: User,
           attributes: ['username']
@@ -73,10 +76,13 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
+  console.log(req.body);
+  console.log(req.session.user_id);
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
-    user_id: req.session.user_id
+    user_id: req.session.user_id,
+    post_price: parseInt(req.body.price),
   })
     .then(postData => res.json(postData))
     .catch(err => {
