@@ -23,22 +23,11 @@ Post.init(
         len: [1]
       }
     },
-    img_src: {
-      type: DataTypes.STRING,
-    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
         key: 'id'
-      }
-    },
-    price: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: {
-        max: 4,
-        isNumeric: true
       }
     }
   },

@@ -10,7 +10,7 @@
 
 <!-- Create post button -->
 <div class="mt-4 mx-4 flex justify-center">
-  <button type="submit"
+  <button type="button"
     class="inline-flex items-center pl-3 pr-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gray-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
     <!-- Heroicon document-add solid -->
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
@@ -21,6 +21,7 @@
     Create New Post
   </button>
 </div>
+
 {{!-- Anthony's create post --}}
 {{!-- <section>
   <h2>Create New Post</h2>
@@ -76,7 +77,7 @@
               Item Photo
             </label>
             <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-              <div id="upload-box" class="space-y-1 text-center">
+              <div class="space-y-1 text-center upload-box">
                 <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
                   <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
@@ -90,7 +91,7 @@
                   PNG, JPG, GIF up to 10MB
                 </p>
               </div>
-              <img id="img-preview" src=""/>
+              <img src="" id="img-preview"/>
             </div>
           </div>
   <div>
@@ -147,7 +148,6 @@
                     <div class="mt-2 text-sm text-gray-700 space-y-4">
                         <p>{{post.post_content}}</p>
                     </div>
-                    <img src="{{post.img_src}}"/>
                 </article>
             </li>
         </ul>
@@ -155,5 +155,4 @@
   {{/each}}
 {{/if}}
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/js/add-post.js"></script>

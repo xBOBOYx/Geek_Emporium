@@ -2,25 +2,6 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-let cartItems = [
-  {
-    title: "Basic Tee",
-    price: 33.99,
-    img: ""
-  },
-  {
-    title: "Coffee Mug",
-    price: 33.99,
-    img: ""
-  },
-  {
-    title: "Baseball Hat",
-    price: 33.99,
-    img: ""
-  },
-]
-
-
 router.get('/', (req, res) => {
   Post.findAll({
     attributes: ['id', 'title', 'created_at', 'post_content'],
@@ -103,19 +84,12 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/signup', (req, res) => {
-  if (req.session.loggedOut) {
+  if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
   res.render('signup');
 });
-
-router.get('/cart', (req, res) => {
-  res.render('cart', {
-    cartItems
-  })
-})
-
 
 module.exports = router;
