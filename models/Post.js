@@ -29,6 +29,14 @@ Post.init(
         model: 'user',
         key: 'id'
       }
+    },
+    price: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        max: 4,
+        isNumeric: true
+      }
     }
   },
   {

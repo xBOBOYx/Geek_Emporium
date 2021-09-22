@@ -2,16 +2,16 @@
   <div class="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <h1 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
     <form class="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
-      <section aria-labelledby="cart-heading" class="lg:col-span-7">
+      <section aria-labelledby="cart-heading" id="items" class="lg:col-span-7">
         <h2 id="cart-heading" class="sr-only">Items in your shopping cart</h2>
 
         <ul role="list" class="border-t border-b border-gray-200 divide-y divide-gray-200">
-          <li class="flex py-6 sm:py-10">
+          {{!-- <li class="flex py-6 sm:py-10">
             <div class="flex-shrink-0">
               <img src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-01-product-01.jpg" alt="Front of men&#039;s Basic Tee in sienna." class="w-24 h-24 rounded-md object-center object-cover sm:w-48 sm:h-48">
             </div>
 
-            <div class="ml-4 flex-1 flex flex-col justify-between sm:ml-6">
+            <div class="ml-4 flex-1 flex flex-col justify-between sm:ml-6 single-item">
               <div class="relative pr-9 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:pr-0">
                 <div>
                   <div class="flex justify-between">
@@ -30,12 +30,12 @@
                       Large
                     </p>
                   </div>
-                  <p class="mt-1 text-sm font-medium text-gray-900">$32.00</p>
+                  <p class="mt-1 text-sm font-medium text-gray-900 price">$32.00</p>
                 </div>
 
                 <div class="mt-4 sm:mt-0 sm:pr-9">
                   <label for="quantity-0" class="sr-only">Quantity, Basic Tee</label>
-                  <select id="quantity-0" name="quantity-0" class="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                  <select id="quantity-0" name="quantity-0" class="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm quantity">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -47,7 +47,7 @@
                   </select>
 
                   <div class="absolute top-0 right-0">
-                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
+                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500 remove-btn">
                       <span class="sr-only">Remove</span>
                       <!-- Heroicon name: solid/x -->
                       <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -109,7 +109,7 @@
                   </select>
 
                   <div class="absolute top-0 right-0">
-                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
+                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500 remove-btn">
                       <span class="sr-only">Remove</span>
                       <!-- Heroicon name: solid/x -->
                       <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -167,7 +167,7 @@
                   </select>
 
                   <div class="absolute top-0 right-0">
-                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
+                    <button type="button" class="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500 remove-btn">
                       <span class="sr-only">Remove</span>
                       <!-- Heroicon name: solid/x -->
                       <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -186,7 +186,10 @@
                 <span>In stock</span>
               </p>
             </div>
-          </li>
+          </li> --}}
+          {{#each cartItems as |cart|}}
+          {{> cart-item}}
+          {{/each}}
         </ul>
       </section>
 
@@ -199,7 +202,7 @@
             <dt class="text-sm text-gray-600">
               Subtotal
             </dt>
-            <dd class="text-sm font-medium text-gray-900">
+            <dd id= "subtotal"class="text-sm font-medium text-gray-900">
               $99.00
             </dd>
           </div>
@@ -250,3 +253,4 @@
     </form>
   </div>
 </div>
+<script src="/js/cart.js"></script>
