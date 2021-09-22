@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at', 'post_price'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -50,7 +50,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at','post_price'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -76,13 +76,12 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  console.log(req.body);
   console.log(req.session.user_id);
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
     user_id: req.session.user_id,
-    post_price: parseInt(req.body.price),
+    post_price: parseInt(req.body.price) ,
   })
     .then(postData => res.json(postData))
     .catch(err => {

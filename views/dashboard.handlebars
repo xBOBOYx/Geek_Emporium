@@ -51,8 +51,9 @@
       Item Title
     </label>
     <div class="mt-1">
-      <input type="text" name="post-title" id="post-title" autocomplete="post-title" 
-        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Title">
+      <input type="text" name="post-title" id="post-title" autocomplete="post-title"
+        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+        placeholder="Title">
     </div>
   </div>
 
@@ -61,8 +62,9 @@
       Item Price
     </label>
     <div class="mt-1">
-      $ <input type="number" min="0.00" max="999999999.00" step="0.01" id="post-price"  name="post-price"
-        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 inline w-500px sm:text-sm border border-gray-300 rounded-md" placeholder="0.00">
+      $ <input type="number" min="0.00" max="999999999.00" step="0.01" id="post-price" name="post-price"
+        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 inline w-500px sm:text-sm border border-gray-300 rounded-md"
+        placeholder="0.00">
     </div>
   </div>
 
@@ -75,34 +77,39 @@
           </label>
           <div class="mt-1">
             <textarea id="post-content" name="post-content" rows="3"
-              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="Describe your amazing product here!!"></textarea>
+              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md"
+              placeholder="Describe your amazing product here!!"></textarea>
           </div>
         </div>
       </div>
     </div>
   </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">
-              Item Photo
-            </label>
-            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-              <div id="upload-box" class="space-y-1 text-center">
-                <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48" aria-hidden="true">
-                  <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <div class="flex text-sm text-gray-600">
-                  <label for="file-upload" class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                    <p>Upload a file</p>
-                    <input id="file-upload" name="file-upload" type="file" class="sr-only">
-                  </label>
-                </div>
-                <p class="text-xs text-gray-500">
-                  PNG, JPG, GIF up to 10MB
-                </p>
-              </div>
-              <img id="img-preview" src=""/>
-            </div>
-          </div>
+  <div>
+    <label class="block text-sm font-medium text-gray-700">
+      Item Photo
+    </label>
+    <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+      <div id="upload-box" class="space-y-1 text-center">
+        <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor" fill="none" viewBox="0 0 48 48"
+          aria-hidden="true">
+          <path
+            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <div class="flex text-sm text-gray-600">
+          <label for="file-upload"
+            class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+            <p>Upload a file</p>
+            <input id="file-upload" name="file-upload" type="file" class="sr-only">
+          </label>
+        </div>
+        <p class="text-xs text-gray-500">
+          PNG, JPG, GIF up to 10MB
+        </p>
+      </div>
+      <img id="img-preview" src="" />
+    </div>
+  </div>
   <div>
     <div class="flex justify-end mr-10">
       <button type="submit"
@@ -130,41 +137,45 @@
 
 <!-- User's posts -->
 {{#if posts.length}}
-  <div class="mx-4">
-    <h3 class="p-2 text-lg leading-6 font-medium bg-blue-500 text-white rounded-md">
-      Your Posts
-    </h3>
-  </div>
+<div class="mx-4">
+  <h3 class="p-2 text-lg leading-6 font-medium bg-blue-500 text-white rounded-md">
+    Your Posts
+  </h3>
+</div>
 
-  {{#each posts as |post| }}
-    <div class="mt-4 mx-4">
-        <ul role="list" class="space-y-4">
-            <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
-                <article aria-labelledby="question-title-81614">
-                    <div>
-                        <h2 id="question-title-81614" class="text-base font-medium text-gray-900">
-                            {{post.title}}
-                        </h2>
-                        <span class="ml-4 text-sm font-medium text-gray-900">
-                          $ {{price}}
-                        </span>
-                        <div class="flex justify-between">
-                            <div class="ml-4 text-sm font-medium text-gray-900">
-                                - {{post.user.username}}
-                            </div>
-                            <div class="text-sm text-gray-500">
-                                <div>{{format_date created_at}}</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-2 text-sm text-gray-700 space-y-4">
-                        <p>{{post.post_content}}</p>
-                    </div>
-                </article>
-            </li>
-        </ul>
-    </div>
-  {{/each}}
+{{#each posts as |post| }}
+<div class="mt-4 mx-4">
+  <ul role="list" class="space-y-4">
+    <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
+      <article aria-labelledby="question-title-81614">
+        <div>
+          <h2 id="question-title-81614" class="text-base font-medium text-gray-900">
+            {{post.title}}
+          </h2>
+          <span class="ml-4 text-sm font-medium text-gray-900">
+            $ {{post.post_price}}
+          </span>
+          <div class="flex justify-between">
+            <div class="ml-4 text-sm font-medium text-gray-900">
+              - {{post.user.username}}
+            </div>
+            <div class="text-sm text-gray-500">
+              <div>{{format_date created_at}}</div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-2 text-sm text-gray-700 space-y-4">
+          <p>{{post.post_content}}</p>
+        </div>
+        <li>
+        {{> post-info-dashboard post}}
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+    </li>
+    </article>
+    </li>
+  </ul>
+</div>
+{{/each}}
 {{/if}}
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
