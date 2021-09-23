@@ -12,7 +12,11 @@ router.get('/', (req, res) => {
       'title',
       'created_at',
       'post_price',
+<<<<<<< HEAD
       'img_url'
+=======
+      'username'
+>>>>>>> 1b90a10261c86d144d1b1197b1ee3da26e37be77
     ],
     include: [
       {
@@ -47,7 +51,11 @@ router.get('/:id', (req, res) => {
       'title',
       'created_at',
       'post_price',
+<<<<<<< HEAD
       'img_url',
+=======
+      'username'
+>>>>>>> 1b90a10261c86d144d1b1197b1ee3da26e37be77
     ],
     include: [
       {
