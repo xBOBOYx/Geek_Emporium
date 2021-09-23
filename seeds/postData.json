@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Luke's severed hand with lightsaber, box unopened",
     "post_content": "I got this thinking it would be a great replacement, but it's just not like the original. I'm sure somebody who doesn't have such strong feelings associated with this will appreciate it more. It's in immaculate shape though!",
     "user_id": 1,
@@ -7,6 +8,7 @@
     "img_url": "https://res.cloudinary.com/dx0fgntfp/image/upload/v1632427739/wrsaj4trypfkmjjc3hga.jpg"
   },
   {
+    "id": 2,
     "title": "Infinity Gauntlet, many uses, like-new",
     "post_content": "I love this thing, hate to get rid of it! Right away I was able to cut traffic in half, no more long commutes to work and back. Also works great in garden or for cleaning dishes. Almost got mugged with it one time but it really shines in a fight.",
     "user_id": 2,
@@ -14,6 +16,7 @@
     "img_url": "https://res.cloudinary.com/dx0fgntfp/image/upload/v1632427680/dhuqyg5fybhxdvo5saco.jpg"
   },
   {
+    "id": 3,
     "title": "Beautiful gold ring, one of a kind",
     "post_content": "Like the title says, gold ring of unique craftsmanship. Didn't work as advertised though, when I didn't wear it people kept trying to take it, when I did wear it they acted like I wasn't there. My loss if your gain! Cash only, no trades",
     "user_id": 3,
