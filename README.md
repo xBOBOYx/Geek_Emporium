@@ -65,8 +65,6 @@ This project is covered under MIT
 ![](assets/dashboard.png)
 ![](assets/posts.png)
 ![](assets/edit.png)
-![](assets/signup.png)
-![](assets/signin.png)
 ## <ins>Contributions
 
 - [xBOBOYx](https://github.com/xBOBOYx)
