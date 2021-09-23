@@ -78,6 +78,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
   console.log(req.body);
   console.log(req.body.imgURL);
+  console.log(req.session.user_id);
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
@@ -96,7 +97,8 @@ router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
-      post_content: req.body.post_content
+      post_content: req.body.post_content,
+      post_price:req.body.post_price,
     },
     {
       where: {
