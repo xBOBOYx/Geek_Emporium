@@ -12,12 +12,13 @@ router.get('/', (req, res) => {
       'title',
       'created_at',
       'post_price',
+      'img_url',
       'username'
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at',],
         include: {
           model: User,
           attributes: ['username']
@@ -47,6 +48,7 @@ router.get('/:id', (req, res) => {
       'title',
       'created_at',
       'post_price',
+      'img_url',
       'username'
     ],
     include: [
