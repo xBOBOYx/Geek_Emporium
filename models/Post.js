@@ -36,7 +36,10 @@ Post.init(
       validate: {
         isNumeric: true
       }
-    }
+    },
+    img_url: {
+      type: DataTypes.STRING,
+    },
   },
   {
     sequelize,

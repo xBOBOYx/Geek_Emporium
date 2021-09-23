@@ -84,7 +84,10 @@
       </div>
     </div>
   </div>
-  <div>
+
+
+  <div class="mx-4">
+
     <label class="block text-sm font-medium text-gray-700">
       Item Photo
     </label>
@@ -107,9 +110,10 @@
           PNG, JPG, GIF up to 10MB
         </p>
       </div>
-      <img id="img-preview" src="" />
+      <img id="img-preview" style="height: 20vh" />
     </div>
   </div>
+
   <div>
     <div class="flex justify-end mr-10">
       <button type="submit"
@@ -147,31 +151,35 @@
 <div class="mt-4 mx-4">
   <ul role="list" class="space-y-4">
     <li class="bg-white px-4 py-6 shadow sm:p-6 sm:rounded-lg">
-      <article aria-labelledby="question-title-81614">
+      <div class="flex justify-between">
+        <h2 id="question-title-81614" class="text-base font-medium text-gray-900">
+          {{post.title}}
+        </h2>
+        <div class="text-sm text-gray-500">
+          <div>{{format_date created_at}}</div>
+        </div>
+      </div>
+      <div class="mt-2 text-sm text-gray-700 space-y-4">
+        <p>{{post.post_content}}</p>
+      </div>
+      <div class="mt-2 flex justify-between">
         <div>
-          <h2 id="question-title-81614" class="text-base font-medium text-gray-900">
-            {{post.title}}
-          </h2>
-          <span class="ml-4 text-sm font-medium text-gray-900">
-            $ {{post.post_price}}
-          </span>
-          <div class="flex justify-between">
-            <div class="ml-4 text-sm font-medium text-gray-900">
-              - {{post.user.username}}
-            </div>
-            <div class="text-sm text-gray-500">
-              <div>{{format_date created_at}}</div>
-            </div>
+          <div class="ml-4 mt-4 text-sm font-medium text-gray-900">
+            <div>$ {{post.post_price}}</div>
+          </div>
+          <div class="ml-4 text-sm font-medium text-gray-900">
+            Seller: {{post.user.username}}
           </div>
         </div>
-        <div class="mt-2 text-sm text-gray-700 space-y-4">
-          <p>{{post.post_content}}</p>
+        <div>
+          <img id="post-img" src="{{post.img_url}}" style="max-height: 20vh; width: auto"/>
         </div>
+      </div>
+        <!-- From previous commit -->
         <li>
-        {{> post-info-dashboard post}}
-        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
-    </li>
-    </article>
+          {{> post-info-dashboard post}}
+          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+        </li>
     </li>
   </ul>
 </div>
