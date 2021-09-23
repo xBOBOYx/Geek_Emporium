@@ -12,12 +12,13 @@ router.get('/', (req, res) => {
       'title',
       'created_at',
       'post_price',
-      'img_url'
+      'img_url',
+      'username'
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at','img_url'],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at',],
         include: {
           model: User,
           attributes: ['username']
@@ -79,9 +80,6 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  console.log(req.body);
-  console.log(req.body.imgURL);
-  console.log(req.session.user_id);
   Post.create({
     title: req.body.title,
     post_content: req.body.post_content,
