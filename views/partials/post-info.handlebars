@@ -27,7 +27,7 @@
                   Angled view
                 </span>
                 <span class="absolute inset-0 rounded-md overflow-hidden">
-                  <img src="{{post.img_url}}" alt="" class="w-full h-full object-center object-cover">
+                  {{!-- <img src="{{img_url}}" alt="" class="w-full h-full object-center object-cover"> --}}
                 </span>
                 <!-- Selected: "ring-indigo-500", Not Selected: "ring-transparent" -->
                 <span class="ring-transparent absolute inset-0 rounded-md ring-2 ring-offset-2 pointer-events-none" aria-hidden="true"></span>
@@ -40,7 +40,7 @@
           <div class="w-full aspect-w-1 aspect-h-1">
             <!-- Tab panel, show/hide based on tab state. -->
             <div id="post-img" aria-labelledby="tabs-1-tab-1" role="tabpanel" tabindex="0">
-              <img src="{{post.img_url}}" alt="Angled front view with bag zipped and handles upright." class="w-full h-full object-center object-cover sm:rounded-lg">
+              <img src="{{img_url}}" alt="Angled front view with bag zipped and handles upright." class="w-full h-full object-center object-cover sm:rounded-lg">
             </div>
   
             <!-- More images... -->
