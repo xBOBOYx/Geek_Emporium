@@ -175,9 +175,7 @@
           <img id="post-img" src="{{post.img_url}}" style="max-height: 20vh; width: auto"/>
         </div>
       </div>
-        <!-- From previous commit -->
         <li>
-          {{> post-info-dashboard post}}
           <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
         </li>
     </li>
@@ -185,6 +183,5 @@
 </div>
 {{/each}}
 {{/if}}
-
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/js/add-post.js"></script>
