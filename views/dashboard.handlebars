@@ -9,9 +9,9 @@
 </div>
 
 <!-- Create post button -->
-<div class="mt-4 mx-4 flex justify-center">
+<div class="mt-4 flex justify-center">
   <button type="submit"
-    class="inline-flex items-center pl-3 pr-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gray-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+    class="inline-flex items-center pl-3 pr-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gray-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 new-post-btn">
     <!-- Heroicon document-add solid -->
     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd"
@@ -23,7 +23,7 @@
 </div>
 
 <!-- Create post form -->
-<form class="new-post-form space-y-2 mt-4">
+<form class="new-post-form space-y-2 mt-4" style="display: none;">
   <div class="mx-4">
     <h3 class="p-2 text-lg leading-6 font-medium bg-blue-500 text-white rounded-md">
       Create New Post
@@ -108,7 +108,7 @@
 
 <!-- User's posts -->
 {{#if posts.length}}
-<div class="mx-4">
+<div class="mt-4 mx-4">
   <h3 class="p-2 text-lg leading-6 font-medium bg-blue-500 text-white rounded-md">
     Your Posts
   </h3>
@@ -142,9 +142,22 @@
           <img id="post-img" src="{{post.img_url}}" style="max-height: 20vh; width: auto"/>
         </div>
       </div>
-      <li>
+      {{!-- <li>
         <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+      </li> --}}
+      <li>
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link">
+          <button type="none"
+            class="inline-flex items-center pl-3 pr-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-gray-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Edit Post
+          </button>
+        </a>
       </li>
+
+
+
+
+
     </li>
   </ul>
 </div>

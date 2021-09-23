@@ -6,6 +6,8 @@ const imgPreview = document.getElementById('img-preview');
 const picUpload = document.getElementById('file-upload');
 // Created posts uploaded image element:
 const postImg = document.getElementById('post-img');
+const newPostForm = document.querySelector('.new-post-form');
+const newPostButton = document.querySelector('.new-post-btn');
 
 
 const cloudinaryURL = '	https://api.cloudinary.com/v1_1/dx0fgntfp/upload';
@@ -33,7 +35,14 @@ picUpload.addEventListener('change', function(event) {
     });
 });
 
+function showNewForm() {
+  // When new post button is pressed, display the new post form and hide the new post button.
+  newPostButton.setAttribute("style", "display: none")
+  newPostForm.setAttribute("style", "display: block")
+}
+
 async function newFormHandler(event) {
+  // When the new post form is submitted, create new post.
   event.preventDefault();
 
   const title = document.querySelector('input[name="post-title"]').value;
@@ -55,10 +64,12 @@ async function newFormHandler(event) {
   });
   console.log(response);
   if (response.ok) {
+    newPostButton.setAttribute("style", "display: flex")
     document.location.replace('/dashboard');
   } else {
     alert(response.statusText);
   }
 }
 
-document.querySelector('.new-post-form').addEventListener('submit', newFormHandler);
+newPostButton.addEventListener('click', showNewForm);
+newPostForm.addEventListener('submit', newFormHandler);
