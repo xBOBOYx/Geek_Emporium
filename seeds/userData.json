@@ -1,0 +1,17 @@
+[
+  {
+    "username": "Luke Skywalker",
+    "email": "luke@geekemporium.com",
+    "password": "password123"
+  },
+  {
+    "username": "Thanos",
+    "email": "thanos@geekemporium.com",
+    "password": "password123"
+  },
+  {
+    "username": "Frodo",
+    "email": "frodo@geekemporium.com",
+    "password": "password123"
+  }
+]
