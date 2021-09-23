@@ -163,17 +163,15 @@
       <div class="mt-2 flex justify-between">
         <div>
           <div class="ml-4 mt-4 text-sm font-medium text-gray-900">
-            <div>$ {{post.post_price}}</div><br>
+            <div>$ {{post.post_price}}</div>
           </div>
           <div class="ml-4 text-sm font-medium text-gray-900">
             Seller: {{post.user.username}}
           </div>
         </div>
-        {{#if post.img_url}}
         <div>
           <img id="post-img" src="{{post.img_url}}" style="max-height: 20vh; width: auto"/>
         </div>
-        {{/if}}
       </div>
       <li>
         {{> post-info-dashboard post}}
