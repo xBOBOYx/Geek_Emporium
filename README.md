@@ -45,6 +45,8 @@ This project is covered under MIT
 
 - Create an account
 
+- Sign in to your account
+
 - Input your item information
 
 - Upload your item image
@@ -59,8 +61,12 @@ This project is covered under MIT
 
 ![](assets/geek-emporium.png)
 ![](assets/geek-emporium-items.png)
+![](assets/single-item.png)
 ![](assets/dashboard.png)
 ![](assets/posts.png)
+![](assets/edit.png)
+![](assets/signup.png)
+![](assets/signin.png)
 ## <ins>Contributions
 
 - [xBOBOYx](https://github.com/xBOBOYx)
