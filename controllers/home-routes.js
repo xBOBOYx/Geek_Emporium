@@ -4,17 +4,17 @@ const { Post, User, Comment } = require('../models');
 
 let cartItems = [
   {
-    title: "Basic Tee",
+    title: "Action Figure",
     price: 33.99,
     img: ""
   },
   {
-    title: "Coffee Mug",
+    title: "Funko Pop",
     price: 33.99,
     img: ""
   },
   {
-    title: "Baseball Hat",
+    title: "Funko Pop",
     price: 33.99,
     img: ""
   },
