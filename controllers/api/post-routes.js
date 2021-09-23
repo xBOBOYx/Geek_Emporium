@@ -12,6 +12,7 @@ router.get('/', (req, res) => {
       'title',
       'created_at',
       'post_price',
+      'username'
     ],
     include: [
       {
@@ -46,6 +47,7 @@ router.get('/:id', (req, res) => {
       'title',
       'created_at',
       'post_price',
+      'username'
     ],
     include: [
       {
