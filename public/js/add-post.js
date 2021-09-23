@@ -10,7 +10,6 @@ const postImg = document.getElementById('post-img');
 
 const cloudinaryURL = '	https://api.cloudinary.com/v1_1/dx0fgntfp/upload';
 const cloudinaryUploadPreset = 'qakcvqzh';
-// let imgURL = '';
 
 // Credit to YouTube channel Learn with Coffee for client-side upload to cloudinary tutorial.
 picUpload.addEventListener('change', function(event) {
