@@ -45,7 +45,7 @@ This project is covered under MIT
 
 - Create an account
 
-- Input your information
+- Input your item information
 
 - Upload your item image
 
