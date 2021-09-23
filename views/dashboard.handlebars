@@ -21,22 +21,6 @@
     Create New Post
   </button>
 </div>
-{{!-- Anthony's create post --}}
-{{!-- <section>
-  <h2>Create New Post</h2>
-
-  <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    <div>
-      <label for="post-content">Post Content</label>
-      <textarea name="post-content"></textarea>
-    </div>
-    <button type="submit" class="btn">Create</button>
-  </form>
-</section> --}}
 
 <!-- Create post form -->
 <form class="new-post-form space-y-2 mt-4">
@@ -85,9 +69,7 @@
     </div>
   </div>
 
-
   <div class="mx-4">
-
     <label class="block text-sm font-medium text-gray-700">
       Item Photo
     </label>
@@ -123,21 +105,6 @@
     </div>
   </div>
 </form>
-
-{{!-- Anthony's users posts --}}
-{{!-- {{#if posts.length}}
-<section>
-  <h2>Your Posts</h2>
-  <ol>
-    {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
-    </li>
-    {{/each}}
-  </ol>
-</section>
-{{/if}} --}}
 
 <!-- User's posts -->
 {{#if posts.length}}
@@ -175,13 +142,14 @@
           <img id="post-img" src="{{post.img_url}}" style="max-height: 20vh; width: auto"/>
         </div>
       </div>
-        <li>
-          <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
-        </li>
+      <li>
+        <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
+      </li>
     </li>
   </ul>
 </div>
 {{/each}}
 {{/if}}
+
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="/js/add-post.js"></script>
