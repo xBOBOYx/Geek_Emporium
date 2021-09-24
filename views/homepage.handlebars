@@ -1,22 +1,23 @@
-  <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-    <div class="text-center">
-      <p class="text-3xl font-extrabold text-transparent sm:text-6xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">Geek Emporium</p>
-      <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Your one stop shop for all your nerdy needs!</p>
-    </div>
+<div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+  <div class="text-center">
+    <p
+      class="text-3xl font-extrabold text-transparent sm:text-6xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">
+      Geek Emporium</p>
+    <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Your one stop shop for all your nerdy needs!</p>
   </div>
+</div>
 
 <article class="post">
-    <div class="bg-white">
+  <div class="bg-white">
     <div class="max-w-7xl mx-auto py-16 px-4 overflow-hidden sm:py-24 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8">
 
-  {{#each posts as |post|}}
+        {{#each posts as |post|}}
 
-    {{> post-info-homepage post }}
+        {{> post-info-homepage post }}
 
-  {{/each}}
+        {{/each}}
 
-  
       </div>
     </div>
   </div>

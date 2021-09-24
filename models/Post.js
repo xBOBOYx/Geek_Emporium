@@ -10,32 +10,32 @@ Post.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     title: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     post_content: {
       type: DataTypes.STRING(750),
       allowNull: false,
       validate: {
-        len: [1]
-      }
+        len: [1],
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: 'user',
-        key: 'id'
-      }
+        key: 'id',
+      },
     },
     post_price: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-        isNumeric: true
-      }
+        isNumeric: true,
+      },
     },
     img_url: {
       type: DataTypes.STRING,
@@ -45,7 +45,7 @@ Post.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post'
+    modelName: 'post',
   }
 );
 

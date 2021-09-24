@@ -8,11 +8,18 @@ router.get('/', withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'title', 'created_at', 'post_content', 'post_price', 'img_url'],
+    attributes: [
+      'id',
+      'title',
+      'created_at',
+      'post_content',
+      'post_price',
+      'img_url',
+    ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at',],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username'],
@@ -24,11 +31,11 @@ router.get('/', withAuth, (req, res) => {
       },
     ],
   })
-    .then(postData => {
-      const posts = postData.map(post => post.get({ plain: true }));
+    .then((postData) => {
+      const posts = postData.map((post) => post.get({ plain: true }));
       res.render('dashboard', { posts, loggedIn: true });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -40,7 +47,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at',],
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username'],
@@ -52,7 +59,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
       },
     ],
   })
-    .then(postData => {
+    .then((postData) => {
       if (postData) {
         const post = postData.get({ plain: true });
 
@@ -64,7 +71,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         res.status(404).end();
       }
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json(err);
     });
 });

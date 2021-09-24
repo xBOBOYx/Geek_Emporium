@@ -2,7 +2,4 @@ node_modules
 .env
 .DS_Store
 package-lock.json
-index.html
-index2.html
-index3.html
-index4.hmtl
+improvements.md

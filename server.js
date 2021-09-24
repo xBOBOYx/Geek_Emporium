@@ -3,10 +3,6 @@ const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
-const http = require('http');
-const util = require('util');
-const Formidable = require('formidable');
-const cloudinary = require("./config/cloudinary");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,13 +24,13 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sess = {
   secret: 'Super secret secret',
   cookie: {
-    maxAge: 1800000
+    maxAge: 1800000,
   },
   rolling: true,
   resave: true,
   saveUninitialized: true,
   store: new SequelizeStore({
-    db: sequelize
+    db: sequelize,
   }),
 };
 
@@ -45,4 +41,3 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
