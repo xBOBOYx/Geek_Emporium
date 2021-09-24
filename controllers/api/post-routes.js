@@ -100,6 +100,7 @@ router.put('/:id', withAuth, (req, res) => {
       title: req.body.title,
       post_content: req.body.post_content,
       post_price:req.body.post_price,
+      img_url: req.body.imgURL,
     },
     {
       where: {
